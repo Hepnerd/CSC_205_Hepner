@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CSC_205_Hepner.Models.Family>
+@{
+    ViewBag.Title = "Customers Index";
+
+}
+
+<h1>Customer License Index</h1>
+<br />
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                Family Name
+            </td>
+            <td>
+                Address
+            </td>
+            <td>
+                City
+            </td>
+            <td>
+                State
+            </td>
+            <td>
+                Zip
+            </td>
+            <td>
+                Phone
+            </td>
+            <td>
+                Options
+            </td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.familyname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.city)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.homephone)
+                </td>
+                <td class="options">
+                    @Html.ActionLink("Edit", "edit", new { id = item.id })&nbsp;<br />
+                    @Html.ActionLink("Details", "details", new { id = item.id })&nbsp;<br />
+                    @Html.ActionLink("Delete", "delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Click here to add a new member", "Create")
+    <br />
+    <br />
+    <br />
+</p>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<CSC_205_Hepner.Models.Person>
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+<h1>People Index</h1>
+<br />
+
+@*<div class="row">
+    <div class="col-md-4">
+        <h2>About</h2>
+        <p>
+            Select from @Model.Count()
+            people:
+        </p>
+        <ul>
+            @foreach (var person in Model)
+            {
+                <li>@person.firstname @person.lastname - @person.cell</li>
+            }
+        </ul>
+
+    </div>*@
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                Middle Name
+            </td>
+            <td>
+                Last Name
+            </td>
+            <td>
+                Cell
+            </td>
+            <td>
+                Relationship
+            </td>
+            <td>
+                Family ID
+            </td>
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.middlename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cell)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.relationship)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.familyId)
+                </td>
+                <td class="options">
+                    @Html.ActionLink("Edit", "edit", new { id = item.id })&nbsp;<br />
+                    @Html.ActionLink("Details", "details", new { id = item.id })&nbsp;<br />
+                    @Html.ActionLink("Delete", "delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Click here to add a new member", "Create")
+    <br />
+    <br />
+    <br />
+</p>
