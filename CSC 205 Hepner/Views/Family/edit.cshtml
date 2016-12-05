@@ -7,7 +7,6 @@
 <h1>Customer License Index Edit.</h1>
 <br />
 <h3>Please enter data below.</h3>
-<hr />
 
 @using (Html.BeginForm())
 {
@@ -61,15 +60,20 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <script type="text/javascript">
+                    function SubmitForm() {
+
+                        var r = confirm("Please confirm.");
+                        if (r == false) {
+                            return false;
+                        }
+                    }</script>
+                <input type="submit" value="Save" class="btn btn-default" onclick="javascript: return SubmitForm();" />
             </div>
         </div>
     </div>
-    <br />
-    <br />
-    <br />
 }
-<div>
+<div style="margin-bottom: 100px">
     <b>
         @Html.ActionLink("Back to List", "Index")
         <br />

@@ -18,24 +18,24 @@
                 <form class="loginForm">
                     <div class="form-group">
                         <label for="username" id="usernameLabel">
-                            Username
+                            Username <a class="forgotPasswordbtn" href="/Home/ForgotUser">
+                                Forgot Username?
+                            </a>
                         </label>
                         <input type="text" class="form-control" id="username">
-
                     </div>
                     <div class="form-group">
                         <label for="password" id="passwordLabel">
-                            Password <a class="forgotPasswordbtn" href="/Account/ForgotPassword">
+                            Password <a class="forgotPasswordbtn" href="/Home/ForgotPass">
                                 Forgot Password?
                             </a>
                         </label>
                         <input type="password" class="form-control" id="password">
-
                     </div>
-                    <a class="button" id="formbtn" onclick="location.href = '/Family/index'">Submit</a>
-                    <a class="button" id="formbtn" onclick="location.href = '/Home/Registration'">Register</a>
+                    <a class="button" id="formbtn" onclick="location.href='/Family/index'">Submit</a>
+                    <a class="button" id="formbtn" onclick="location.href='/Home/Registration'">Register</a>
                     <div class="checkbox">
-                        <input type="checkbox"> <label>Remember Me</label>
+                        <label><input type="checkbox" /> Remember Me?</label>
                     </div>
                 </form>
             </header>
@@ -45,17 +45,19 @@
         @RenderBody()
         <hr>
     </div>
-    <footer class="footer">
-        <div class="sitenavigation">
-            <ul>
-                <li>Thank You. Come Again.</li>
-                <li><a onclick="location.href='/Home/index'">Home</a></li>
-                <li><a onclick="location.href='/Home/About'">About Us</a></li>
-                <li><a onclick="location.href='/Home/Registration'">Register</a></li>
-                <li><a onclick="location.href='/Home/Contact'">Contact Us</a></li>
-            </ul>
-        </div>
-    </footer>
+    <div class="form1">
+        <footer class="footer">
+            <div class="sitenavigation">
+                <ul>
+                    <li>Thank You. Come Again.</li>
+                    <li><a onclick="location.href='/Home/index'">Home</a></li>
+                    <li><a onclick="location.href='/Home/About'">About Us</a></li>
+                    <li><a onclick="location.href='/Home/Registration'">Register</a></li>
+                    <li><a onclick="location.href='/Home/Contact'">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

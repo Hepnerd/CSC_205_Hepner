@@ -407,6 +407,13 @@ input[type="button"] {
 }
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.form-horizontal {
+    
+    width: auto;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
 .registerForm label {
     display: inline-block;
     width: 300px;
@@ -415,6 +422,8 @@ input[type="button"] {
 }
 
 .loginForm {
+    border: 0.1px solid black;
+    float: right;
     color: black;
     background-color: #f4f4f2;
     margin-top: 5px;
@@ -475,9 +484,6 @@ select {
     box-sizing: border-box;
 }
 /* Removes awkward default styles on some inputs for iOS */
-form {
-    float: right;
-}
 
 input[type="email"],
 input[type="number"],
@@ -528,6 +534,9 @@ input[type="radio"] {
     display: inline-block;
     padding-right: 0px;
     vertical-align: top;
+}
+
+.checkboxLabel {
 }
 
 label > .label-body {
@@ -647,14 +656,34 @@ pre > code {
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.datatable {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+    .datatable td {
+        text-align: center;
+        border: 0.5px solid black;
+    }
+
+    .datatable tr {
+        text-align: center;
+    }
+
 th,
 td {
-    padding: 12px 15px;
+    /*padding: 10px;*/
+    padding: 10px 10px 10px 10px;
     text-align: left;
     border-bottom: 1px solid #E1E1E1;
 }
 
-    th:first-child,
+dl {
+    margin-bottom: 20px;
+    display: block;
+}
+
+/*th:first-child,
     td:first-child {
         padding-left: 0;
     }
@@ -662,7 +691,7 @@ td {
     th:last-child,
     td:last-child {
         padding-right: 0;
-    }
+    }*/
 
 
 /* Spacing

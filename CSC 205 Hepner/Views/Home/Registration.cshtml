@@ -1,4 +1,4 @@
-﻿@{
+﻿@*@{
     ViewBag.Title = "Register";
 }
 
@@ -25,5 +25,24 @@
             <input type="submit" class="btn btn-default" value="Register" />
         </div>
     </div>
-</div>
+</div>*@
 
+
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Message = "Home.";
+}
+
+<h1>@ViewBag.Message</h1>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+    <div class="container">
+        <p class="phrase">
+            <h3 style="text-align: center">Welcome to the DMV. Please take a number and step into line. We'll be with you in a few hours.</h3>
+        </p>
+    </div>
+</body>
+</html>

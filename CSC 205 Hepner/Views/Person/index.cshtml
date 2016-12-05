@@ -5,26 +5,9 @@
 }
 
 
-<h1>People Index</h1>
+<h1>People Index.</h1>
 <br />
-
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>About</h2>
-        <p>
-            Select from @Model.Count()
-            people:
-        </p>
-        <ul>
-            @foreach (var person in Model)
-            {
-                <li>@person.firstname @person.lastname - @person.cell</li>
-            }
-        </ul>
-
-    </div>*@
-
-<table>
+<table class="datatable">
     <tbody>
         <tr>
             <td>
@@ -43,7 +26,7 @@
                 Relationship
             </td>
             <td>
-                Family ID
+                Options
             </td>
         </tr>
         @foreach (var item in Model)
@@ -64,13 +47,27 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.relationship)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.familyId)
-                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.familyId)
+                    </td>*@
                 <td class="options">
                     @Html.ActionLink("Edit", "edit", new { id = item.id })&nbsp;<br />
                     @Html.ActionLink("Details", "details", new { id = item.id })&nbsp;<br />
-                    @Html.ActionLink("Delete", "delete", new { id = item.id })
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <script type="text/javascript">
+                                function SubmitForm() {
+
+                                    var r = confirm("Please confirm.");
+                                    if (r == false) {
+                                        return false;
+                                    }
+                                }</script>
+                            <div onclick="javacsript: return SubmitForm();">
+                                @Html.ActionLink("Delete", "delete", new { id = item.id })
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         }

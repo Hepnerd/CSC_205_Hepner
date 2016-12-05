@@ -4,10 +4,11 @@
 
 }
 
-<h1>Customer License Index</h1>
+<h1>Customer License Index.</h1>
 <br />
-
-<table>
+<a onclick="location.href='/Person/index'" class="button">Private Members Page</a></>
+<hr />
+<table class="datatable">
     <tbody>
         <tr>
             <td>
@@ -56,7 +57,21 @@
                 <td class="options">
                     @Html.ActionLink("Edit", "edit", new { id = item.id })&nbsp;<br />
                     @Html.ActionLink("Details", "details", new { id = item.id })&nbsp;<br />
-                    @Html.ActionLink("Delete", "delete", new { id = item.id })
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <script type="text/javascript">
+                                function SubmitForm() {
+
+                                    var r = confirm("Please confirm.");
+                                    if (r == false) {
+                                        return false;
+                                    }
+                                }</script>
+                            <div onclick="javacsript: return SubmitForm();">
+                                @Html.ActionLink("Delete", "delete", new { id = item.id })
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         }
